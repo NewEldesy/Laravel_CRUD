@@ -52,4 +52,11 @@ class EtudiantController extends Controller
 
         return redirect('/etudiant')->with('status', 'Student Update Successfuly');
     }
+
+    public function delete($id){
+        $etudiant = Etudiant::find($id);
+        $etudiant->delete();
+
+        return redirect('/etudiant')->with('status', 'Student Delete Successfuly');
+    }
 }
